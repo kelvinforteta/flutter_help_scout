@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_help_scout/flutter_help_scout.dart';
 
 void main() async {
@@ -10,70 +11,68 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Help Scott Example',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  // create an instance of Flutter Help Scout and pass the beacon ID and other values to it
+  FlutterHelpScout _helpScout;
 
-  void _incrementCounter() {
-    // int counter = (prefs.getInt('counter') ?? 0) + 1;
-    setState(() {
-      _counter++;
-    });
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initBeacon() async {
+    _helpScout = FlutterHelpScout(
+        beaconId: '2ba5e8ec-9858-4bdf-810a-5fdea9f30aac',
+        email: 'email@example.com',
+        name: 'John Doe',
+        avatar: 'https://avatars3.githubusercontent.com/u/6048601?v=4');
+
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    try {
+      _helpScout.initialize();
+    } on PlatformException catch (e) {
+      debugPrint('${e.message}');
+    }
+  }
+
+  @override
+  void initState() {
+    // initialize beacon
+    initBeacon();
+
+    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Text('Help Scott Example'),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: RaisedButton(
+        child: Text(
+          'Contact Us',
+          style: TextStyle(color: Colors.white),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
+        color: Colors.blue,
         onPressed: () {
-          FlutterHelpScout(
-                  beaconId: '2ba5e8ec-9858-4bdf-810a-5fdea9f30aac',
-                  name: 'Kelvin Rolex',
-                  email: 'hi@gmail.com')
-              .openBeacon();
+          _helpScout.openBeacon();
         },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      )),
     );
   }
 }

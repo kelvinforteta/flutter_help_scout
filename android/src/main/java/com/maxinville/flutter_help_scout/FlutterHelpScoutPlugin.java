@@ -30,13 +30,15 @@ public class FlutterHelpScoutPlugin implements FlutterPlugin, MethodCallHandler,
   /// when the Flutter Engine is detached from the Activity
   private MethodChannel channel;
 
-  private   Context context;
-  private Activity activity;
+  Activity context;
+
+  BeaconHelpers beaconHelpers = new BeaconHelpers();
+
 
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
 
-    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "flutter_help_scout");
+    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "maxinville.com/flutter_help_scout");
     channel.setMethodCallHandler(this);
 
   }
@@ -45,24 +47,28 @@ public class FlutterHelpScoutPlugin implements FlutterPlugin, MethodCallHandler,
   public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     final Map<String, Object> arguments = call.arguments();
 
-    try{
-
-      new Beacon.Builder()
-              .withBeaconId((String)arguments.get("beaconId"))
-              .build();
-
-        identifyUser((String)arguments.get("email"), (String)arguments.get("name"));
-
-    }catch (Exception e){
-      throw(e);
+    // this will initialize the beacon
+    if (call.method.equals("initialize")) {
+      beaconHelpers.initialize((String) arguments.get("beaconId"));
+      beaconHelpers.identity((String) arguments.get("email"), (String) arguments.get("name"), (String) arguments.get("avatar"), (String) arguments.get("company"), (String) arguments.get("jobTitle"));
+      result.success("Beacon successfully initialized!");
+    }
+    // open the beacon
+    else if(call.method.equals("openBeacon")){
+      beaconHelpers.openBeacon(context);
+      result.success("Beacon successfully opened!");
     }
 
-    if (call.method.equals("openBeacon")) {
-      openBeacon(activity);
-
-    } else {
-      result.notImplemented();
+    else if(call.method.equals("logoutBeacon")){
+      beaconHelpers.logout();
+      result.success("Beacon successfully logged out!");
     }
+
+    else if(call.method.equals("clearBeacon")){
+      beaconHelpers.logout();
+      result.success("Beacon successfully cleared!");
+    }
+
   }
 
   @Override
@@ -70,22 +76,9 @@ public class FlutterHelpScoutPlugin implements FlutterPlugin, MethodCallHandler,
     channel.setMethodCallHandler(null);
   }
 
-  void identifyUser(String email, String name) {
-    try {
-      Beacon.identify(email, name);
-    } catch (Exception e) {
-      throw(e);
-    }
-  }
-
-
-  void openBeacon(Context context){
-    BeaconActivity.open(context);
-  }
-
   @Override
   public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
-    activity = binding.getActivity();
+    this.context = binding.getActivity();
   }
 
   @Override
