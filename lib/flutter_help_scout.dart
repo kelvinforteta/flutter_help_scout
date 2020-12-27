@@ -50,7 +50,7 @@ class FlutterHelpScout {
    * Whenever you want to invoke Beacon, use the code below to
    * display the Beacon user interface.
    */
-  Future<void> openBeacon() async {
+  Future<void> open() async {
     try {
       final String result = await _channel.invokeMethod(
         'openBeacon',
@@ -68,7 +68,7 @@ class FlutterHelpScout {
     * push token and resets the Beacon Device ID. It won’t
     * remove the Beacon ID, or any local config overrides.
    */
-  Future<void> logoutBeacon() async {
+  Future<void> logout() async {
     try {
       final String result = await _channel.invokeMethod(
         'logoutBeacon',
@@ -85,7 +85,7 @@ class FlutterHelpScout {
     * including the Beacon ID. This may be useful if
     * you are using different Beacons in different parts of your app.
     */
-  Future<void> clearBeacon() async {
+  Future<void> clear() async {
     try {
       final String result = await _channel.invokeMethod(
         'clearBeacon',
