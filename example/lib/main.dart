@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
         beaconId: beaconId,
         email: 'email@example.com',
         name: 'John Doe',
-        avatar: 'https://avatars3.githubusercontent.com/u/6048601?v=4');
+        avatar: 'https://avatars3.githubusercontent.com/u/53996412?s=460&v=4');
 
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
