@@ -1,8 +1,10 @@
 name: flutter_help_scout
-description: A new Flutter plugin.
+description: A Flutter plugin for Help Scout.
 version: 0.0.1
-author:
-homepage:
+#authors: 
+#  - Kelvin Forteta <hi@kelvinforteta.dev>
+  
+homepage: https://github.com/KelvinForteta/flutter_help_scout
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
