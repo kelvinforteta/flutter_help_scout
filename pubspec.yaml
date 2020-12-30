@@ -1,6 +1,6 @@
 name: flutter_help_scout
-description: A Flutter plugin for Help Scout.
-version: 0.0.1
+description: Flutter implementation for Help Scout mobile SDK.
+version: 0.0.1+1
 #authors: 
 #  - Kelvin Forteta <hi@kelvinforteta.dev>
   

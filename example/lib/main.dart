@@ -29,13 +29,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   // create an instance of Flutter Help Scout and pass the beacon ID and other values to it
   FlutterHelpScout _beacon;
-  String beaconId = '2ba5e8ec-9858-4bdf-810a-5fdea9f30aac';
+  String beaconId = 'YOUR_BEACON_ID';
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initBeacon() async {
     _beacon = FlutterHelpScout(
         beaconId: beaconId,
-        email: 'email@example.com',
+        email: 'example@example.com',
         name: 'John Doe',
         avatar: 'https://avatars3.githubusercontent.com/u/53996412?s=460&v=4');
 
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // in the middle of the parent.
           child: RaisedButton(
         child: Text(
-          'Contact Us',
+          'Open Beacon',
           style: TextStyle(color: Colors.white),
         ),
         color: Colors.blue,
