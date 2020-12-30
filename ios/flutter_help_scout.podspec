@@ -5,13 +5,13 @@
 Pod::Spec.new do |s|
   s.name             = 'flutter_help_scout'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin.'
+  s.summary          = 'Flutter implementation for Help Scout mobile SDK.'
   s.description      = <<-DESC
 A new Flutter plugin.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'http://kelvinforteta.dev'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'Maxinville Technologies Limited' => 'hi@kelvinforteta.dev' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'

@@ -6,7 +6,7 @@ import Beacon
 
 public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "maxinville.com/flutter_help_scout", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "kelvinforteta.dev/flutter_help_scout", binaryMessenger: registrar.messenger())
     let instance = SwiftFlutterHelpScoutPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }

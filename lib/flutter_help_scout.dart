@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 
 class FlutterHelpScout {
   static const MethodChannel _channel =
-      const MethodChannel('maxinville.com/flutter_help_scout');
+      const MethodChannel('kelvinforteta.dev/flutter_help_scout');
 
   final String beaconId;
   final String name;
