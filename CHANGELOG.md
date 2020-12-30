@@ -5,3 +5,7 @@
 ## 0.0.1+2
 
 * Changed the package name and bundle ID from com.maxinville.flutter.help.scout to dev.kelvinforteta.flutter.help.scout.
+
+## 0.0.1+3
+
+* Updated the license.
