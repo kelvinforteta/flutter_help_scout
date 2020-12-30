@@ -9,3 +9,7 @@
 ## 0.0.1+3
 
 * Updated the license.
+
+## 0.0.1+4
+
+* Updated plugin description, added logoutBeacon() and clearBeacon() methods to the iOS version.

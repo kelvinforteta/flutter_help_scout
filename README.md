@@ -1,6 +1,6 @@
 # flutter_help_scout
 
-A new Flutter plugin.
+Flutter implementation for Help Scout mobile SDK. Help Scout is an all-in-one customer service platform that helps you balance everything your customers need to be happy.
 
 ## Getting Started
 

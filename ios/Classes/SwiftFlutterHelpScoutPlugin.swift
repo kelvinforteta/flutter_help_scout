@@ -30,6 +30,22 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
       
         result("Beacon open successfully!")
     }
+
+    else if(call.method.elementsEqual("logoutBeacon")){
+     
+        // logout beacon
+        logoutBeacon()
+      
+        result("Beacon logged out successfully!")
+    }
+
+    else if(call.method.elementsEqual("clearBeacon")){
+     
+        // reset beacon
+        resetBeacon()
+      
+        result("Beacon reset successfully!")
+    }
     
   }
     
@@ -56,6 +72,16 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
   public func openBeacon(beaconId: String){
     let settings = HSBeaconSettings(beaconId: beaconId)
     HSBeacon.open(settings)
+  }
+
+  // logout beacon
+  public func logoutBeacon(){
+    HSBeacon.logout()
+  }
+
+  // reset beacon
+  public func resetBeacon(){
+    HSBeacon.reset()
   }
     
 }
