@@ -1,6 +1,6 @@
 name: flutter_help_scout
 description: Flutter implementation for Help Scout mobile SDK.
-version: 0.0.1+1
+version: 0.0.1+2
 #authors: 
 #  - Kelvin Forteta <hi@kelvinforteta.dev>
   
@@ -30,7 +30,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.maxinville.flutter_help_scout
+        package: dev.kelvinforteta.flutter_help_scout
         pluginClass: FlutterHelpScoutPlugin
       ios:
         pluginClass: FlutterHelpScoutPlugin

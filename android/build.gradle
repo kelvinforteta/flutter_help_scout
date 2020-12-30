@@ -1,4 +1,4 @@
-group 'com.maxinville.flutter_help_scout'
+group 'dev.kelvinforteta.flutter_help_scout'
 version '1.0'
 
 buildscript {
