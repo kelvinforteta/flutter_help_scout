@@ -13,3 +13,7 @@
 ## 0.0.1+4
 
 * Updated plugin description, added logoutBeacon() and clearBeacon() methods to the iOS version.
+
+## 0.0.1+5
+
+* Changed the version of Beacon for iOS to version 2.1.2.
