@@ -40,7 +40,11 @@ Future<void> initBeacon() async {
 
   _beacon.open(beaconId: beaconId);
   ```
-  
+
+### Other methods
+`_beacon.clear();`
+
+`_beacon.logout();`
 
 ### Requirements
 **For Android**

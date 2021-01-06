@@ -12,12 +12,16 @@ class FlutterHelpScout {
 
   /// This is the user's name
   final String name;
+
   /// This is the user's email address
   final String email;
+
   /// This is the user's avatar/photo
   final String avatar;
+
   /// This is the user's company
   final String company;
+
   /// This is the user's job title
   final String jobTitle;
 
@@ -52,11 +56,10 @@ class FlutterHelpScout {
     }
   }
 
-  
-   /// Once you’ve initialized Beacon, you’re ready to interact with it.
-   /// Whenever you want to invoke Beacon, use the code below to
-   /// display the Beacon user interface.
-   
+  /// Once you’ve initialized Beacon, you’re ready to interact with it.
+  /// Whenever you want to invoke Beacon, use the code below to
+  /// display the Beacon user interface.
+
   Future<void> open({String beaconId}) async {
     var data = <String, dynamic>{
       'beaconId': beaconId,
@@ -74,11 +77,11 @@ class FlutterHelpScout {
     }
   }
 
-    /// Calling this method resets the current Beacon state,
-    /// thereby deleting all the user data: email, name, user attributes,
-    /// push token and resets the Beacon Device ID. It won’t
-    /// remove the Beacon ID, or any local config overrides.
-   
+  /// Calling this method resets the current Beacon state,
+  /// thereby deleting all the user data: email, name, user attributes,
+  /// push token and resets the Beacon Device ID. It won’t
+  /// remove the Beacon ID, or any local config overrides.
+
   Future<void> logout() async {
     try {
       final String result = await _channel.invokeMethod(
@@ -91,11 +94,10 @@ class FlutterHelpScout {
     }
   }
 
-  
-    /// This method wipes all data from the Beacon,
-    /// including the Beacon ID. This may be useful if
-    /// you are using different Beacons in different parts of your app.
-    
+  /// This method wipes all data from the Beacon,
+  /// including the Beacon ID. This may be useful if
+  /// you are using different Beacons in different parts of your app.
+
   Future<void> clear() async {
     try {
       final String result = await _channel.invokeMethod(

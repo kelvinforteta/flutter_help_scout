@@ -22,3 +22,9 @@
 ## 0.0.1+6
 
 * Added dartdoc comments
+
+## 0.0.1+7
+
+* Formatted code
+
+* Updated readme file
