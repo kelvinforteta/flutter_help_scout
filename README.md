@@ -65,6 +65,7 @@ kotlinOptions {
 
 
 **For iOS**
+
 The Beacon SDK requires iOS 11.0+.
 
 *Note: For this plugin to work, add the following permission to your info.plist file (Optional)*

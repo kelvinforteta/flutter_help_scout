@@ -18,3 +18,7 @@
 
 * Changed the version of Beacon for iOS to version 2.1.2.
 * Update the README file
+
+## 0.0.1+6
+
+* Added dartdoc comments
