@@ -1,4 +1,4 @@
-package com.maxinville.flutter_help_scout;
+package dev.kelvinforteta.flutter_help_scout;
 
 
 import android.app.Activity;
