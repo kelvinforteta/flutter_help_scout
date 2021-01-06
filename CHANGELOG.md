@@ -17,3 +17,4 @@
 ## 0.0.1+5
 
 * Changed the version of Beacon for iOS to version 2.1.2.
+* Update the README file
