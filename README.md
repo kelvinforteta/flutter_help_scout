@@ -68,7 +68,7 @@ kotlinOptions {
 
 The Beacon SDK requires iOS 11.0+.
 
-*Note: For this plugin to work, add the following permission to your info.plist file (Optional)*
+*Note: For this plugin to work as expected, add the following permission to your info.plist file (Optional)*
 
 - `NSPhotoLibraryUsageDescription`
 - `NSCameraUsageDescription`
