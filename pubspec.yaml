@@ -2,9 +2,9 @@ name: flutter_help_scout
 description: Flutter implementation for Help Scout mobile SDK. Help Scout is an all-in-one customer service platform that helps you balance everything your customers need to be happy.
 version: 0.0.1+8
 #authors: 
-#  - Kelvin Forteta <hi@kelvinforteta.dev>
+#  - Izu Okoye
   
-homepage: https://github.com/KelvinForteta/flutter_help_scout
+homepage: https://github.com/izuokoye/flutter_help_scout
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
