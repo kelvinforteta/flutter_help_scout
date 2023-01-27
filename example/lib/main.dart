@@ -64,12 +64,12 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: RaisedButton(
+          child: TextButton(
         child: Text(
           'Open Beacon',
           style: TextStyle(color: Colors.white),
         ),
-        color: Colors.blue,
+        // color: Colors.blue,
         onPressed: () {
           _beacon.open(beaconId: beaconId);
         },
