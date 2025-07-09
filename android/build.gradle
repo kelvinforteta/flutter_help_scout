@@ -5,18 +5,18 @@ buildscript {
     apply from: './dependencies.gradle'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:8.1.0'
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
@@ -24,7 +24,7 @@ apply plugin: 'com.android.library'
 
 android {
     namespace "dev.kelvinforteta.flutter_help_scout"
-    compileSdkVersion 29
+    compileSdkVersion 34
 
     defaultConfig {
         minSdkVersion 21
@@ -33,8 +33,9 @@ android {
         disable 'InvalidPackage'
     }
 }
+
 dependencies {
     implementation "com.helpscout:beacon-ui:$beaconVersion"
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 }
