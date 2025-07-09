@@ -1,18 +1,6 @@
 group 'dev.kelvinforteta.flutter_help_scout'
 version '1.0'
 
-buildscript {
-    apply from: './dependencies.gradle'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0'
-    }
-}
-
 rootProject.allprojects {
     repositories {
         google()
@@ -33,6 +21,8 @@ android {
         disable 'InvalidPackage'
     }
 }
+
+apply from: './dependencies.gradle'
 
 dependencies {
     implementation "com.helpscout:beacon-ui:$beaconVersion"
