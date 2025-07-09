@@ -23,6 +23,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
+    namespace "dev.kelvinforteta.flutter_help_scout"
     compileSdkVersion 29
 
     defaultConfig {
